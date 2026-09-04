@@ -1,0 +1,61 @@
+// Theming API for ngx-mat-datetime-panel, mirroring Angular Material's own convention
+// (`theme()`/`color()`/`typography()`/`density()`/`overrides()`), backed by CSS custom
+// properties namespaced `--ngx-mat-datetime-panel-*`. The embedded `MatCalendar` already
+// picks up Material's own `--mat-datepicker-*`/`--mat-calendar-*` variables for free — this
+// file only themes the parts this package owns: the panel surface, the time spinner, the
+// range segmented control, and the toggle icon.
+//
+// Usage:
+//   @use 'ngx-mat-datetime-panel/theming' as ngx-datetime-panel;
+//   @include ngx-datetime-panel.theme($my-angular-material-theme);
+
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  $accent: mat.get-theme-color($theme, primary);
+  $surface: mat.get-theme-color($theme, surface);
+  $on-surface: mat.get-theme-color($theme, on-surface);
+
+  .ngx-mat-datetime-panel,
+  .ngx-mat-datetime-range-panel {
+    --ngx-mat-datetime-panel-surface-background: #{$surface};
+    --ngx-mat-datetime-panel-surface-color: #{$on-surface};
+    --ngx-mat-datetime-panel-accent-color: #{$accent};
+    --ngx-mat-datetime-panel-spinner-accent-color: #{$accent};
+  }
+}
+
+@mixin typography($theme) {
+  .ngx-mat-datetime-panel,
+  .ngx-mat-datetime-range-panel {
+    font-family: mat.get-theme-typography($theme, body-medium, font-family);
+  }
+}
+
+@mixin density($theme) {
+  // No density-driven sizing yet — reserved for a future release.
+}
+
+/** Applies color + typography (+ density, once it does something) from a full Angular Material theme. */
+@mixin theme($theme) {
+  @if mat.theme-has($theme, color) {
+    @include color($theme);
+  }
+  @if mat.theme-has($theme, typography) {
+    @include typography($theme);
+  }
+  @if mat.theme-has($theme, density) {
+    @include density($theme);
+  }
+}
+
+/** Direct low-level overrides for the `--ngx-mat-datetime-panel-*` custom properties, bypassing the theme object. */
+@mixin overrides($tokens: ()) {
+  .ngx-mat-datetime-panel,
+  .ngx-mat-datetime-range-panel {
+    @each $token, $value in $tokens {
+      --ngx-mat-datetime-panel-#{$token}: #{$value};
+    }
+  }
+}

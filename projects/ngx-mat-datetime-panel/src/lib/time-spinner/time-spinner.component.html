@@ -1,0 +1,35 @@
+<ngx-mat-time-spinner-column
+  [value]="hour"
+  [min]="0"
+  [max]="23"
+  [step]="1"
+  [disabled]="disabled"
+  label="Hour"
+  (valueChange)="onHourChange($event)"
+/>
+
+<div class="ngx-mat-time-spinner__separator" aria-hidden="true">:</div>
+
+<ngx-mat-time-spinner-column
+  [value]="minute"
+  [min]="0"
+  [max]="59"
+  [step]="minuteStep"
+  [disabled]="disabled"
+  label="Minute"
+  (valueChange)="onMinuteChange($event)"
+/>
+
+@if (showSeconds) {
+  <div class="ngx-mat-time-spinner__separator" aria-hidden="true">:</div>
+
+  <ngx-mat-time-spinner-column
+    [value]="second ?? 0"
+    [min]="0"
+    [max]="59"
+    [step]="secondStep"
+    [disabled]="disabled"
+    label="Second"
+    (valueChange)="onSecondChange($event)"
+  />
+}

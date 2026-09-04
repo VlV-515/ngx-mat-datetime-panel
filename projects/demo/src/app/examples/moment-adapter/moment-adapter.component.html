@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Moment adapter — genericity proof</mat-card-title>
+    <mat-card-subtitle>Same panel, backed by <code>MomentDateAdapter</code> instead of the app-wide native one.</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-form-field appearance="outline" class="example-field">
+      <mat-label>Pick a date &amp; time (moment)</mat-label>
+      <input matInput readonly [ngxMatDatetimePanel]="momentPicker" [formControl]="control" />
+      <ngx-mat-datetime-panel-toggle matSuffix [for]="momentPicker" />
+    </mat-form-field>
+
+    <ngx-mat-datetime-panel #momentPicker />
+
+    <p class="example-value">Value (moment): <code>{{ control.value?.format() }}</code></p>
+  </mat-card-content>
+</mat-card>

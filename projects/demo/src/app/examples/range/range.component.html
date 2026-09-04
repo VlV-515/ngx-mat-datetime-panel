@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Range — Desde / Hasta</mat-card-title>
+    <mat-card-subtitle>
+      Segmented control switches which endpoint is being edited. Cross-validation blocks Hasta &lt; Desde.
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-form-field appearance="outline" class="example-field">
+      <mat-label>Pick a date &amp; time range</mat-label>
+      <input matInput readonly [ngxMatDatetimeRangePanel]="rangePicker" [formControl]="control" />
+      <ngx-mat-datetime-panel-toggle matSuffix [for]="rangePicker" />
+      @if (control.errors?.['ngxDateRangeInvalid']) {
+        <mat-hint class="example-error">Hasta can't be before Desde.</mat-hint>
+      }
+    </mat-form-field>
+
+    <ngx-mat-datetime-range-panel #rangePicker [showActionButtons]="true" />
+
+    <p class="example-value">Value: <code>{{ control.value | json }}</code></p>
+  </mat-card-content>
+</mat-card>

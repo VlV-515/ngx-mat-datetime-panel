@@ -1,0 +1,46 @@
+.demo-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.demo-header {
+  margin-bottom: 24px;
+
+  h1 {
+    margin: 0 0 8px;
+  }
+
+  p {
+    margin: 0;
+    color: var(--mat-sys-on-surface-variant);
+  }
+}
+
+.demo-grid {
+  display: grid;
+  gap: 24px;
+}
+
+::ng-deep {
+  .example-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .example-field {
+    display: block;
+    max-width: 320px;
+  }
+
+  .example-value {
+    font-size: 0.875rem;
+    color: var(--mat-sys-on-surface-variant);
+  }
+
+  .example-error {
+    color: var(--mat-sys-error);
+  }
+}

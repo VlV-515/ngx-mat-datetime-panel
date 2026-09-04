@@ -1,0 +1,33 @@
+<button
+  type="button"
+  class="ngx-time-spinner-column__chevron"
+  tabindex="-1"
+  [disabled]="disabled"
+  [attr.aria-label]="label + ' up'"
+  (click)="increment()"
+>
+  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 14l5-5 5 5z" /></svg>
+</button>
+
+<div
+  class="ngx-time-spinner-column__digit"
+  role="spinbutton"
+  [attr.tabindex]="disabled ? -1 : 0"
+  [attr.aria-label]="label"
+  [attr.aria-valuemin]="min"
+  [attr.aria-valuemax]="max"
+  [attr.aria-valuenow]="value"
+  [attr.aria-disabled]="disabled"
+  (keydown)="onKeydown($event)"
+>{{ display }}</div>
+
+<button
+  type="button"
+  class="ngx-time-spinner-column__chevron"
+  tabindex="-1"
+  [disabled]="disabled"
+  [attr.aria-label]="label + ' down'"
+  (click)="decrement()"
+>
+  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 10l5 5 5-5z" /></svg>
+</button>

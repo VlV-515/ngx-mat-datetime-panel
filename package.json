@@ -1,0 +1,62 @@
+{
+  "name": "ngx-mat-datetime-panel",
+  "version": "20.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:demo": "ng test demo",
+    "build:lib": "ng build ngx-mat-datetime-panel",
+    "demo": "ng serve demo"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^20.3.30",
+    "@angular/cdk": "^20.2.14",
+    "@angular/common": "^20.3.0",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/forms": "^20.3.0",
+    "@angular/material": "^20.2.14",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/router": "^20.3.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.3.36",
+    "@angular/cli": "^20.3.36",
+    "@angular/compiler-cli": "^20.3.0",
+    "@angular/material-moment-adapter": "^20.2.14",
+    "@types/jasmine": "~5.1.0",
+    "@types/jest": "^30.0.0",
+    "jasmine-core": "~5.9.0",
+    "jest": "^30.5.1",
+    "jest-environment-jsdom": "^30.5.1",
+    "jest-preset-angular": "^17.0.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "moment": "^2.30.1",
+    "ng-packagr": "^20.3.0",
+    "typescript": "~5.9.2"
+  }
+}

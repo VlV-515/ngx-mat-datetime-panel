@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 0;
+}
+
+.ngx-mat-time-spinner__separator {
+  font-size: 1.5rem;
+  line-height: 1;
+  padding-bottom: 2px;
+  color: var(--ngx-mat-datetime-panel-spinner-digit-color, inherit);
+}

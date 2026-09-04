@@ -1,0 +1,29 @@
+<ng-template>
+  <div class="ngx-mat-datetime-range-panel">
+    <ngx-mat-datetime-range-panel-content
+      [value]="value"
+      [activeEndpoint]="activeEndpoint"
+      [startView]="startView"
+      [minDate]="minDate"
+      [maxDate]="maxDate"
+      [dateFilter]="dateFilter"
+      [dateClass]="dateClass"
+      [granularity]="granularity"
+      [showSeconds]="showSeconds"
+      [timeStep]="timeStep"
+      [disabled]="disabled"
+      [startEndpointLabel]="startEndpointLabel"
+      [endEndpointLabel]="endEndpointLabel"
+      (valueChange)="onContentValueChange($event)"
+      (activeEndpointChange)="onActiveEndpointChange($event)"
+    />
+
+    @if (showActionButtons) {
+      <div class="ngx-mat-datetime-panel__actions">
+        <button type="button" class="ngx-mat-datetime-panel__action ngx-mat-datetime-panel__action--primary" (click)="close()">
+          Aceptar
+        </button>
+      </div>
+    }
+  </div>
+</ng-template>

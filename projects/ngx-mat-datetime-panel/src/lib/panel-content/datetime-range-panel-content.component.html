@@ -1,0 +1,36 @@
+<mat-button-toggle-group
+  class="ngx-mat-datetime-range-panel-content__toggle"
+  [value]="activeEndpoint"
+  (change)="onEndpointToggle($event)"
+>
+  <mat-button-toggle value="start">{{ startEndpointLabel }}</mat-button-toggle>
+  <mat-button-toggle value="end">{{ endEndpointLabel }}</mat-button-toggle>
+</mat-button-toggle-group>
+
+@if (showCalendar) {
+  <mat-calendar
+    [selected]="selectedForEndpoint"
+    [startAt]="selectedForEndpoint"
+    [startView]="startView"
+    [minDate]="calendarMinDate"
+    [maxDate]="calendarMaxDate"
+    [dateFilter]="dateFilter ?? null"
+    [dateClass]="dateClass"
+    [comparisonStart]="comparisonRange.start"
+    [comparisonEnd]="comparisonRange.end"
+    (selectedChange)="onCalendarSelected($event)"
+  />
+}
+
+@if (showSpinner) {
+  <ngx-mat-time-spinner
+    [hour]="timeValue.hour"
+    [minute]="timeValue.minute"
+    [second]="timeValue.second"
+    [showSeconds]="showSeconds"
+    [minuteStep]="timeStep"
+    [secondStep]="timeStep"
+    [disabled]="disabled"
+    (timeChange)="onTimeChange($event)"
+  />
+}

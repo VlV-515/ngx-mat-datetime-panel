@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Basic — single value</mat-card-title>
+    <mat-card-subtitle>Calendar + time spinner in one panel. Live-binding, no confirm step by default.</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="example-controls">
+      <mat-form-field appearance="outline">
+        <mat-label>Granularity</mat-label>
+        <mat-select [(ngModel)]="granularity">
+          <mat-option value="date">date</mat-option>
+          <mat-option value="datetime">datetime</mat-option>
+          <mat-option value="time">time</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="showSeconds">Show seconds</mat-checkbox>
+    </div>
+
+    <mat-form-field appearance="outline" class="example-field">
+      <mat-label>Pick a date &amp; time</mat-label>
+      <input matInput readonly [ngxMatDatetimePanel]="picker" [formControl]="control" />
+      <ngx-mat-datetime-panel-toggle matSuffix [for]="picker" />
+    </mat-form-field>
+
+    <ngx-mat-datetime-panel #picker [granularity]="granularity" [showSeconds]="showSeconds" [showActionButtons]="true" />
+
+    <p class="example-value">Value: <code>{{ control.value }}</code></p>
+  </mat-card-content>
+</mat-card>

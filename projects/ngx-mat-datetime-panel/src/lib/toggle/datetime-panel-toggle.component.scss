@@ -1,0 +1,30 @@
+:host {
+  display: inline-flex;
+}
+
+.ngx-mat-datetime-panel-toggle__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--ngx-mat-datetime-panel-toggle-icon-color, currentColor);
+  cursor: pointer;
+  border-radius: 50%;
+
+  svg {
+    fill: currentColor;
+  }
+
+  &:hover:not(:disabled) {
+    background: var(--ngx-mat-datetime-panel-spinner-hover-background, rgba(0, 0, 0, 0.06));
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.38;
+  }
+}

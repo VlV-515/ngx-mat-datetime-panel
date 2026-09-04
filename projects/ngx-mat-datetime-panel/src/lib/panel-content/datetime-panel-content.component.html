@@ -1,0 +1,25 @@
+@if (showCalendar) {
+  <mat-calendar
+    [selected]="selected"
+    [startAt]="startAt"
+    [startView]="startView"
+    [minDate]="minDate"
+    [maxDate]="maxDate"
+    [dateFilter]="dateFilter ?? null"
+    [dateClass]="dateClass"
+    (selectedChange)="onCalendarSelected($event)"
+  />
+}
+
+@if (showSpinner) {
+  <ngx-mat-time-spinner
+    [hour]="timeValue.hour"
+    [minute]="timeValue.minute"
+    [second]="timeValue.second"
+    [showSeconds]="showSeconds"
+    [minuteStep]="timeStep"
+    [secondStep]="timeStep"
+    [disabled]="disabled"
+    (timeChange)="onTimeChange($event)"
+  />
+}
