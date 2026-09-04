@@ -1,6 +1,6 @@
 {
   "name": "ngx-mat-datetime-panel",
-  "version": "20.0.1",
+  "version": "20.0.2",
   "description": "Compact single-view date + time picker panel for Angular Material 20+, with built-in range mode. Generic over DateAdapter<D> — no moment/date-fns/luxon dependency.",
   "keywords": [
     "angular",
@@ -17,11 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TODO/ngx-mat-datetime-panel.git"
+    "url": "git+https://github.com/VlV-515/ngx-mat-datetime-panel.git"
   },
-  "homepage": "https://github.com/TODO/ngx-mat-datetime-panel#readme",
+  "homepage": "https://github.com/VlV-515/ngx-mat-datetime-panel#readme",
   "bugs": {
-    "url": "https://github.com/TODO/ngx-mat-datetime-panel/issues"
+    "url": "https://github.com/VlV-515/ngx-mat-datetime-panel/issues"
   },
   "peerDependencies": {
     "@angular/common": "^20.0.0",
