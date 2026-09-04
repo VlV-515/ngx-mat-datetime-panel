@@ -5,6 +5,7 @@
 <mat-button-toggle-group
   class="ngx-mat-datetime-range-panel-content__toggle"
   [value]="activeEndpoint"
+  [hideSingleSelectionIndicator]="true"
   (change)="onEndpointToggle($event)"
 >
   <mat-button-toggle value="start">{{ startEndpointLabel }}</mat-button-toggle>

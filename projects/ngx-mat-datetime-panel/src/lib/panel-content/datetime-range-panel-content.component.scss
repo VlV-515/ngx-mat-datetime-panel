@@ -15,10 +15,23 @@
 }
 
 .ngx-mat-datetime-range-panel-content__toggle {
+  display: flex;
+  width: 100%;
   margin: 8px 16px 4px;
   align-self: stretch;
 
-  ::ng-deep .mdc-button {
+  // Material 20's button-toggle no longer renders an internal MDC button (that selector never
+  // matched) — split the two options evenly and center each label ourselves instead.
+  ::ng-deep mat-button-toggle {
+    flex: 1 1 0%;
+  }
+
+  ::ng-deep .mat-button-toggle-button {
     width: 100%;
+  }
+
+  ::ng-deep .mat-button-toggle-label-content {
+    width: 100%;
+    line-height: 40px;
   }
 }
