@@ -1,7 +1,10 @@
 :host {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // Default (stretch) so `mat-calendar` fills the panel's full width, same as it does in the
+  // single-value panel content (no flex container there at all). `align-items: center` here
+  // previously shrunk it to its own intrinsic width, rendering the calendar roughly half-size.
+  align-items: stretch;
 }
 
 .ngx-mat-datetime-range-panel-content__step-title {
