@@ -2,13 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  padding: 8px 0;
+  gap: 10px;
+  padding: 20px 0;
+  border-top: 1px solid var(--ngx-mat-datetime-panel-divider-color, rgba(0, 0, 0, 0.12));
 }
 
 .ngx-mat-time-spinner__separator {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   line-height: 1;
-  padding-bottom: 2px;
+  padding-bottom: 4px;
   color: var(--ngx-mat-datetime-panel-spinner-digit-color, inherit);
 }

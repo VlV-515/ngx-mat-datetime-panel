@@ -1,3 +1,7 @@
+<div class="ngx-mat-datetime-range-panel-content__step-title">
+  {{ activeEndpoint === 'start' ? startEndpointLabel : endEndpointLabel }}
+</div>
+
 <mat-button-toggle-group
   class="ngx-mat-datetime-range-panel-content__toggle"
   [value]="activeEndpoint"

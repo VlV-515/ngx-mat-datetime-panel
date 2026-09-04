@@ -20,9 +20,16 @@
 
     @if (showActionButtons) {
       <div class="ngx-mat-datetime-panel__actions">
-        <button type="button" class="ngx-mat-datetime-panel__action ngx-mat-datetime-panel__action--primary" (click)="close()">
-          Aceptar
-        </button>
+        @if (activeEndpoint === 'start') {
+          <button type="button" class="ngx-mat-datetime-panel__action ngx-mat-datetime-panel__action--primary" (click)="onActiveEndpointChange('end')">
+            Siguiente
+          </button>
+        } @else {
+          <button type="button" class="ngx-mat-datetime-panel__action" (click)="onActiveEndpointChange('start')">Atrás</button>
+          <button type="button" class="ngx-mat-datetime-panel__action ngx-mat-datetime-panel__action--primary" (click)="close()">
+            Aceptar
+          </button>
+        }
       </div>
     }
   </div>
