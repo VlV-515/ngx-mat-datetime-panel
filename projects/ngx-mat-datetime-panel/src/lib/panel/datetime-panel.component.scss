@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   min-width: 320px;
+  max-height: calc(100vh - 16px);
+  overflow-y: auto;
   padding: 8px;
   background: var(--ngx-mat-datetime-panel-surface-background, white);
   color: var(--ngx-mat-datetime-panel-surface-color, inherit);

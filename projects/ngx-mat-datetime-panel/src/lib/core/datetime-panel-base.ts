@@ -110,8 +110,9 @@ export abstract class NgxDatetimePanelBase {
     return this.overlay
       .position()
       .flexibleConnectedTo(origin)
-      .withFlexibleDimensions(false)
-      .withPush(false)
+      .withFlexibleDimensions(true)
+      .withViewportMargin(8)
+      .withPush(true)
       .withPositions([
         { originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top', offsetY: 4 },
         { originX: 'start', originY: 'top', overlayX: 'start', overlayY: 'bottom', offsetY: -4 },
