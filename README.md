@@ -93,6 +93,15 @@ one codebase trying to serve multiple Angular majors' APIs at once.
 
 ## Publishing
 
+Bump the `version` field in **both** `package.json` (root) and
+`projects/ngx-mat-datetime-panel/package.json` first, then:
+
+```bash
+npm run publish:lib
+```
+
+Equivalent to running manually:
+
 ```bash
 npm run build:lib
 cd dist/ngx-mat-datetime-panel
