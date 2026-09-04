@@ -8,16 +8,19 @@
 }
 
 .ngx-mat-datetime-range-panel-content__step-title {
-  margin: 16px 16px 4px;
-  font-size: 1.125rem;
+  margin: 8px 16px 4px;
+  font-size: 1rem;
   font-weight: 600;
   align-self: flex-start;
 }
 
 .ngx-mat-datetime-range-panel-content__toggle {
   display: flex;
-  width: 100%;
-  margin: 8px 16px 4px;
+  // No `width: 100%` here — a flex item's `align-self: stretch` (inherited from `:host` above)
+  // already fills the cross-axis correctly *minus* its own margins. `width: 100%` computes
+  // against the parent's full width and then adds the margins on top of that, overflowing the
+  // panel and triggering a horizontal scrollbar.
+  margin: 4px 16px 4px;
   align-self: stretch;
 
   // Material 20's button-toggle no longer renders an internal MDC button (that selector never
@@ -30,8 +33,18 @@
     width: 100%;
   }
 
+  // `.mat-button-toggle-label-content` is a `<span>` (inline by default) with Material's own
+  // horizontal padding baked in — `width: 100%` on an inline element is a no-op, and that
+  // padding alone can make the label wider than its half of the toggle, overflowing the panel.
+  // Force it to a block box we actually control, and clip as a safety net for longer labels.
   ::ng-deep .mat-button-toggle-label-content {
+    display: block;
     width: 100%;
-    line-height: 40px;
+    padding: 0 4px;
+    line-height: 32px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

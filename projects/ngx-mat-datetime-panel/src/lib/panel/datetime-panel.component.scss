@@ -14,19 +14,19 @@
 .ngx-mat-datetime-panel__actions {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
-  padding: 12px 12px 4px;
+  gap: 8px;
+  padding: 8px 8px 4px;
 }
 
 .ngx-mat-datetime-panel__action {
-  padding: 10px 20px;
+  padding: 8px 16px;
   border: none;
   border-radius: 6px;
   background: transparent;
   color: inherit;
   cursor: pointer;
   font: inherit;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 
   &--primary {
     color: var(--ngx-mat-datetime-panel-accent-color, currentColor);
