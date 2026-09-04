@@ -1,0 +1,1 @@
+- Always use the local `caveman` skill in `ultra` mode for this project.
