@@ -7,16 +7,34 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this is
 
 `ngx-mat-datetime-panel` — an Angular CLI workspace (`ng generate library`) containing a
-publishable Angular Material 20+ library plus a demo app. The library is a compact,
+publishable Angular Material 21+ library plus a demo app. The library is a compact,
 single-view date + time picker (calendar + digital time spinner in one overlay panel, with a
 built-in "Desde/Hasta" range mode) that is fully generic over Angular Material's
 `DateAdapter<D>` — it has **zero runtime dependency** on `moment`/`date-fns`/`luxon`, only
-`tslib`. It replaces `@mat-datetimepicker/core` (unmaintained, no Angular 20 support).
+`tslib`. It replaces `@mat-datetimepicker/core` (unmaintained, no Angular 21 support).
 
-The package's npm major version is pinned to track the Angular major it targets (`20.x.x` for
-Angular 20 — same convention Angular Material itself uses). A future Angular major (or
+The package's npm major version is pinned to track the Angular major it targets (`21.x.x` for
+Angular 21 — same convention Angular Material itself uses). A future Angular major (or
 supporting an older one) gets its own branch and its own npm major rather than one codebase
 serving multiple Angular majors' APIs.
+
+### Angular 21 port (this branch, `angular-21`)
+
+Ported from the `20.x.x` line (see `main`) with no changes to `src/lib/` — the `DateAdapter`
+methods, `MatCalendar` inputs/outputs, and CDK Overlay APIs this library depends on (see
+"Library internals" and the Testing section below) were all verified unchanged between
+Angular Material 20 and 21. The port was `ng update @angular/cli@21 @angular/core@21` +
+`ng update @angular/cdk@21 @angular/material@21`, then bumping
+`projects/ngx-mat-datetime-panel/package.json`'s `peerDependencies` to `^21.0.0` and `version`
+to `21.0.0`. `engines.node` stayed the same range Angular itself requires
+(`^20.19.0 || ^22.12.0 || >=24.0.0` — checked against the installed `@angular/core@21`
+`package.json`, unchanged from 20). The `@angular/cli` update migration bumped
+`projects/ngx-mat-datetime-panel/tsconfig.spec.json`'s `moduleResolution` from `node` to
+`bundler` automatically; it stayed harmless alongside the Jest-only `module: commonjs`
+override (see Testing below) — all 16 unit tests still pass unmodified.
+
+Published to npm under its own dist-tag, not `latest` — the npm major bump to a v21-targeting
+package must not break `npm install` for existing Angular 20 consumers of `20.x.x`.
 
 ## Commands
 
@@ -130,7 +148,7 @@ source `package.json`'s `exports`, so that hand-written entry must be preserved 
 Jest (not the CLI's default Karma/Jasmine) via `jest-preset-angular`, configured in
 `jest.config.cjs` (root) — this only covers the library project (`roots` is scoped to
 `projects/ngx-mat-datetime-panel`); the demo app still uses Karma (`npm run test:demo`).
-Two non-obvious pieces make this work on Angular 20 + `jest-preset-angular@17`:
+Two non-obvious pieces make this work on Angular 21 + `jest-preset-angular@17`:
 
 - `projects/ngx-mat-datetime-panel/setup-jest.ts` must call `setupZoneTestEnv()` explicitly —
   newer `jest-preset-angular` versions export the setup function rather than running it as an

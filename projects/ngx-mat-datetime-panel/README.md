@@ -1,6 +1,6 @@
 # ngx-mat-datetime-panel
 
-A compact, single-view date + time picker for **Angular Material 20+**.
+A compact, single-view date + time picker for **Angular Material 21+**.
 
 Calendar and a digital hour/minute spinner sit in **one panel at the same time** — never a
 multi-step wizard, never a dropdown/autocomplete-style time list. Built-in **range mode** from
@@ -10,14 +10,14 @@ works with the native `Date` adapter, `MomentDateAdapter`, or any other Angular 
 adapter. **Zero dependency on `moment`, `date-fns`, or `luxon`.**
 
 Replaces the abandoned [`@mat-datetimepicker/core`](https://github.com/h2qutc/angular-material-components)
-family for apps on Angular 20+ — a fresh implementation, not a fork.
+family for apps on Angular 21+ — a fresh implementation, not a fork.
 
 ## Requirements
 
-- **Node.js** `^20.19.0 || ^22.12.0 || >=24.0.0` (same range Angular 20 itself requires).
-- An existing **Angular 20** app or workspace, generated with `ng new`/`ng generate application`
-  on `@angular/cli@^20.0.0`.
-- **Angular Material 20** already added — `ng add @angular/material` (this gives you
+- **Node.js** `^20.19.0 || ^22.12.0 || >=24.0.0` (same range Angular 21 itself requires).
+- An existing **Angular 21** app or workspace, generated with `ng new`/`ng generate application`
+  on `@angular/cli@^21.0.0`.
+- **Angular Material 21** already added — `ng add @angular/material` (this gives you
   `@angular/material` and `@angular/cdk`, both required peers).
 - A `DateAdapter<D>` provided somewhere in your app (see below) — this library doesn't ship one.
 
@@ -30,8 +30,8 @@ If you're targeting an older or newer Angular major, see [Versioning](#versionin
 npm install ngx-mat-datetime-panel
 ```
 
-Peer dependencies (already in any Angular Material 20 app): `@angular/core`, `@angular/common`,
-`@angular/cdk`, `@angular/material`, all `^20.0.0`. `npm install` will refuse to resolve these
+Peer dependencies (already in any Angular Material 21 app): `@angular/core`, `@angular/common`,
+`@angular/cdk`, `@angular/material`, all `^21.0.0`. `npm install` will refuse to resolve these
 if your app is on a different Angular major — that's intentional, see Versioning above.
 
 You also need a `DateAdapter<D>` provided in your app — the same one `MatDatepicker` uses:

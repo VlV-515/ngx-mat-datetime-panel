@@ -2,9 +2,9 @@
 
 [![npm version](https://img.shields.io/npm/v/ngx-mat-datetime-panel.svg)](https://www.npmjs.com/package/ngx-mat-datetime-panel)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Angular](https://img.shields.io/badge/Angular-20-dd0031.svg)](https://angular.dev)
+[![Angular](https://img.shields.io/badge/Angular-21-dd0031.svg)](https://angular.dev)
 
-A compact, **single-view** date + time picker for **Angular Material 20+**.
+A compact, **single-view** date + time picker for **Angular Material 21+**.
 
 Calendar and a digital hour/minute spinner sit in **one panel at the same time** — never a
 multi-step wizard, never a dropdown/autocomplete-style time list. Built-in **range mode** from
@@ -13,14 +13,14 @@ works with the native `Date` adapter, `MomentDateAdapter`, or any other Angular 
 adapter. **Zero dependency on `moment`, `date-fns`, or `luxon`.**
 
 It replaces the abandoned [`@mat-datetimepicker/core`](https://github.com/h2qutc/angular-material-components)
-family for apps on Angular 20+ — a fresh implementation, not a fork, and not affiliated with it.
+family for apps on Angular 21+ — a fresh implementation, not a fork, and not affiliated with it.
 
 ## Why
 
 Angular Material's own `MatDatepicker` only picks a date, and `MatTimepicker`
 (`@angular/material/timepicker`, 19+) picks a time as a dropdown/autocomplete list. Neither
 covers "pick a date **and** a time in one compact interaction," and the community package that
-used to fill that gap doesn't support Angular 20. This library is that gap, filled from
+used to fill that gap doesn't support Angular 21. This library is that gap, filled from
 scratch: one panel, one interaction, calendar and time together.
 
 ## Features
@@ -86,10 +86,11 @@ npm test            # runs the library's Jest suite
 
 ## Versioning
 
-The package's major version tracks the Angular major it targets — `20.x.x` for Angular 20,
-mirroring how Angular Material itself is versioned. Support for a future Angular major (21+)
-or an older one will live on its own branch, publishing under its own npm major, rather than
-one codebase trying to serve multiple Angular majors' APIs at once.
+The package's major version tracks the Angular major it targets — `21.x.x` for Angular 21,
+mirroring how Angular Material itself is versioned. Support for a future Angular major (22+)
+or an older one (20.x.x is still maintained on the `main` branch) lives on its own branch,
+publishing under its own npm major, rather than one codebase trying to serve multiple Angular
+majors' APIs at once.
 
 ## Publishing
 
