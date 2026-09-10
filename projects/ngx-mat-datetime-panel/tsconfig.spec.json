@@ -3,8 +3,11 @@
   "compilerOptions": {
     "outDir": "../../out-tsc/spec",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "types": ["jest", "node"]
+    "moduleResolution": "bundler",
+    "types": [
+      "jest",
+      "node"
+    ]
   },
   "include": ["src/**/*.d.ts", "src/**/*.spec.ts"]
 }
